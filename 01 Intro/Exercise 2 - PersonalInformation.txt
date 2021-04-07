@@ -1,0 +1,16 @@
+Write a program that generates the following output:
+
+
+First Name: Max
+Last Name: Mustermann
+Age: 21
+
+First Name, Last Name und Age should each be output by a separate statement.
+
+In addition, generate the following output:
+
+First Name: Erika
+Last Name: Engel
+Age: 18
+
+First Name, Last Name and Age should be output in a single statement. 

@@ -1,0 +1,10 @@
+Get familiar with the different data types.
+Create a variable with the corresponding data type for each of the following bullet points:
+
+-	Integer
+-	Decimal number
+-	String or text
+-	Character
+-	Boolean value
+
+Assign a value to the variables and then display them on the screen.

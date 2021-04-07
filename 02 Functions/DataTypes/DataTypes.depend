@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1617195774 source:c:\users\lukas\documents\c-plus-plus\datatypes\main.cpp
+	<iostream>
+
+1617271051 source:c:\users\lukas\documents\c-plus-plus\02 functions\datatypes\main.cpp
+	<iostream>
+	<cstdlib>
+
