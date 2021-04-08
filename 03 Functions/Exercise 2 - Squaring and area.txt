@@ -1,0 +1,13 @@
+The following program is to be created:
+
+-	Displaying a welcome screen
+-	Prompt and entering a decimal number
+-	Squaring the decimal number (in a function, return is the result 
+	[square = number * number]) and output of the result in the main function
+-	Prompt and entering a radius
+-	Calculation of the circular area (in one function, no return value).
+	The result of the calculation [area = radius * radius * constant_pi]) 
+	is to be output in this function.
+	The variable constant_pi should be declared as a constant and initialized
+	with the value 3.14.
+	Use the previously created function for the calculation [radius * radius].
