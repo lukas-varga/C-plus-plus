@@ -4,26 +4,40 @@ using namespace std;
 
 int main()
 {
-    int x,y;
+    double x,y;
     char oper;
 
-    cout << "Enter two operands and operator in between e.g.'5*3': " << endl;
+    cout << "Welcome to Calculator program!" << endl;
+    cout << "Enter two operands and operator e.g.'5*3': " << endl;
     cin >> x >> oper >> y;
 
+    cout<< "= ";
     switch(oper)
     {
-        case '+':{
-
-            }
-        case '-':{
-
-        }
-        case '*':{
-
-            }
+        case '+':
+            cout << (x+y);
+            break;
+        case '-':
+            cout << (x-y);
+            break;
+        case '*':
+            cout << (x*y);
+            break;
         case '/':{
-
+            if(y==0)
+            {
+                cout << "Division by 0 is not allowed!";
+            }
+            else
+            {
+                cout << (x/y);
+            }
+            break;
         }
+        default:
+            cout << "Incorrect operator is entered!";
     }
+    cout << endl;
+
     return 0;
 }
