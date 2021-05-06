@@ -1,0 +1,28 @@
+Add the following to your farm program from Chapter 3 „Exercise 1 - Farm“:
+ 
+Use a switch statement to create a user menu that calls the following 3 functions:
+
+-	1: Add animal ()
+-	3: Display Animal (Animalnumber)
+-	2: Sell Animal ()
+-	0: Exit program
+ 
+The menu should reappear until the user enters the number  0 to exit the program (do-while loop).
+
+The following data should be saved when adding an animal:
+-	Animal species
+-	Animal number
+-	Weight
+
+The following data should be displayed when displaying an animal:
+-	Animal species
+-	Animal number
+-	Weight
+-	Whether the animal is still in stock
+
+When selling an animal, it should be checked whether the animal is still in stock and whether the stored animal number matches the animal number entered. 
+The following should be possible:
+-	Input of the daily price
+-	The revenues increases (weight * daily price)
+-	Output of the total revenues
+-	Afterwards the animal is no longer in stock

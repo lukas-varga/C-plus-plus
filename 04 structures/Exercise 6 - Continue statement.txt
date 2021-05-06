@@ -1,0 +1,4 @@
+Create a loop in which you output all numbers from 1 to 100, which are divisible by the number 2.
+Use the continue statement to skip the numbers that are not divisible by the number 2!
+
+You can find more information on the continue statement in the glossary of the VHB course or on the following page: https://en.cppreference.com/w/cpp/language/continue

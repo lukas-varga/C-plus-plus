@@ -1,0 +1,8 @@
+Program the game „Guessing Numbers“: The computer generates a random number
+between 1 and 100 which the player has to guess. At each pass, the system tells you whether the number entered was too large or too small
+
+
+Tip: Random numbers are generated as follows: 
+A single call of srand(time(NULL)) initializes the random number generator. 
+Subsequently, each call of rand()%100 returns a random number between 0 and 99.
+The functions are declared in <ctime> and <cstdlib>.
