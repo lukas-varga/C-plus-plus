@@ -1,0 +1,11 @@
+Create a shopping list for a maximum of 10 products. 
+For this purpose, the product name and price should be entered and then saved in an array.
+Create a menu with the following functions:
+
+-	New item
+-	Show items
+-	Sort items
+-	Exit
+
+It should also be possible to output the current number of items in the menu.
+Sorting is based on the price (the name should be sorted accordingly)
