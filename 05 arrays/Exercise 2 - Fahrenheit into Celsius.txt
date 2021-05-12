@@ -1,0 +1,10 @@
+Use your program from „Exercise 2 - Fahrenheit into Celsius“ from Chapter 4 and modify it as follows:
+
+You want to store the celsius values in an array.
+
+Create an array that can hold 10 Celsius values.
+The entered Fahrenheit value is increased in increments of 10.
+
+Use a for loop to do this.
+
+Use a while loop to output the calculated Celsius values with the corresponding Fahrenheit values and the index.

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1620817070 source:c:\users\lukas\documents\c-plus-plus\05 arrays\ex3-sort\main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+

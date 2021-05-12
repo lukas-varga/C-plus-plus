@@ -1,0 +1,5 @@
+Sort an array of any size holding random numbers using the bubble sort procedure.
+
+First, output the unsorted numbers.
+Output the intermediate steps while sorting.
+Finally, the sorted numbers should be output.
