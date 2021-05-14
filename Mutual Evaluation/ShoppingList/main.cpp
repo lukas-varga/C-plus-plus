@@ -3,29 +3,32 @@
 
 using namespace std;
 
-string species;
-int animalNumber;
-int weight;
-bool isStock;
+string names[10];
+double prices[10];
 
-float totalRev = 0;
-
-void addAnimal();
-void displayAnimal();
-void sellAnimal();
+void newItem();
+void showItems();
+void sortItems();
+void sort(double numbers[], string sortedNames[], int SIZE);
 
 int main()
 {
-    cout << "Hello user and welcome at out farm!" << endl << endl;
+    for(int i=0; i<10; i++)
+    {
+        names[i] = "";
+        prices[i] = -1.0;
+    }
+
+    cout << "Shopping list!" << endl << endl;
     int input = -1;
 
     do
     {
         system("cls");
-        cout << "1: Add animal" << endl;
-        cout << "2: Display animal" << endl;
-        cout << "3: Sell animal" << endl;
-        cout << "0: Exit program" << endl;
+        cout << "1: New item" << endl;
+        cout << "2: Show items" << endl;
+        cout << "3: Sort items" << endl;
+        cout << "0: Exit" << endl;
 
         cout << "Input: ";
         cin >> input;
@@ -33,23 +36,23 @@ int main()
         {
             case 1:
                 system("cls");
-                addAnimal();
+                newItem();
                 system("pause");
                 break;
             case 2:
                 system("cls");
-                displayAnimal();
+                showItems();
                 system("pause");
                 break;
             case 3:
                 system("cls");
-                sellAnimal();
+                sortItems();
                 system("pause");
                 break;
             case 0:
                 system("cls");
                 system("pause");
-                return 0;
+                break;
             default:
                 system("cls");
                 cout << "Wrong input, try again!" << endl;
@@ -57,62 +60,101 @@ int main()
         }
         cout << endl;
     }while(input != 0);
+    return 0;
 }
 
 
-void addAnimal()
+void newItem()
 {
-    cout << "Enter species: ";
-    cin >> species;
+    string name;
+    double price;
 
-    cout << "Enter animal number: ";
-    cin >> animalNumber;
+    cout << "Name: ";
+    cin >> name;
 
-    cout << "Enter weight: ";
-    cin >> weight;
+    cout << "Price: ";
+    cin >> price;
 
-    isStock = true;
-}
-
-void displayAnimal()
-{
-    cout << "Species: " << species << endl;
-    cout << "Animal number: " << animalNumber << endl;
-    cout << "Weight: " << weight << endl;
-
-    string answerStock = (isStock) ? "yes" : "no";
-    cout << "Is in stock: " << answerStock << endl;
-}
-
-void sellAnimal()
-{
-    int selectedAnim;
-    if(!isStock){
-        cout << "There isn't any animal in stock!" << endl;
-    }
-    else
+    for(int i=0; i<10; i++)
     {
-        cout << "Enter animal number to sell: ";
-        cin >> selectedAnim;
-        if(selectedAnim != animalNumber){
-            cout << "Entered number doesn't correspond to animal in stock!" << endl;
-        }
-        else
+        if(prices[i] == -1)
         {
-            float dailyPrize;
-            cout << "Enter the daily prize of " << species << ": ";
-            cin >> dailyPrize;
-
-            float revenue = weight * dailyPrize;
-            cout << "Revenue is: " << revenue << endl;
-
-            totalRev += revenue;
-            cout << "Total revenue is: " << totalRev << endl;
-
-            isStock = false;
+            names[i] = name;
+            prices[i] = price;
+            break;
         }
     }
 }
 
+void showItems()
+{
+    int counter = 0;
+    for(int i=0; i<10; i++)
+    {
+        if(prices[i] == -1)
+        {
+            break;
+        }
+        cout << names[i] << ":\t" << prices[i] << " $" << endl;
+        counter++;
+    }
+
+    cout << "Number of items in the list: " << counter << endl;
+}
+
+void sortItems()
+{
+    double sortedPrices[10];
+    string sortedNames[10];
+
+    for(int i=0;i<10;i++)
+    {
+        double price = prices[i];
+        sortedPrices[i] = price;
+
+        string name = names[i];
+        sortedNames[i] = name;
+    }
+    sort(sortedPrices, sortedNames, 10);
+
+    cout << "Sorted list based on the price:"<< endl;
+
+    for(int i=0;i<10;i++)
+    {
+        if(sortedPrices[i]==-1){
+            continue;
+        }
+        cout << sortedNames[i] <<":\t" << sortedPrices[i] << " $" << endl;
+    }
+}
+
+//bubble sort implementation
+void sort(double numbers[], string sortedNames[], int SIZE)
+{
+    bool swapped = false;
+    int n = SIZE;
+
+    do
+    {
+        swapped = false;
+        for(int i=1; i<n; i++)
+        {
+            if(numbers[i-1] > numbers[i]){
+                double tempPrice = numbers[i-1];
+                numbers[i-1] = numbers[i];
+                numbers[i] = tempPrice;
+
+                //ADDED
+                string tempString = sortedNames[i-1];
+                sortedNames[i-1] = sortedNames[i];
+                sortedNames[i] = tempString;
+                //ADDED
+
+                swapped = true;
+            }
+        }
+        n--;
+    }while(swapped);
+}
 
 
