@@ -49,28 +49,27 @@ bool isFifthyOrMore()
 
 //---EMPLOYEE---
 
-enum Type { HE, SE, M };
-
 class Employee
 {
 private:
     string surname;
     string firstName;
     Date birth;
+
     int daysTaken;
     bool isCreated;
-    Type type;
     static int counter;
 public:
     Employee();
     void enterCommon();
     void showCommon();
+    void deleteEmployee();
+
     string getSurname();
     string getFirstName();
     Date getBirth();
+
     bool getIsCreated();
-    Type getType();
-    void setType(Type);
     static int getCounter();
 };
 
@@ -98,10 +97,15 @@ void Employee::enterCommon()
 
 void Employee::showCommon()
 {
-    cout << "Surname:" << getSurname() << "\t\tFirst name: " << getFirstName() << "\t\t";
+    cout << "Surname:" << getSurname() << "\tFirst name: " << getFirstName() << "\t";
     cout << "Birth: ";
     getBirth().showDate();
-    cout << "\t\t";
+    cout << "\t";
+}
+
+void Employee::deleteEmployee()
+{
+    isCreated = false;
 }
 
 string Employee::getSurname()
@@ -124,16 +128,6 @@ bool Employee:: getIsCreated()
     return isCreated;
 }
 
-Type Employee::getType()
-{
-    return type;
-}
-
-void Employee::setType(Type t)
-{
-    type = t;
-}
-
 int Employee::counter = 0;
 
 int Employee::getCounter()
@@ -148,12 +142,10 @@ class HourlyEmployee : public Employee
 private:
     double hourlyWage;
     int hoursWorked;
-    static int heCounter;
 public:
     HourlyEmployee():Employee(){};
     void enterData();
     void showData();
-    static int getHeCounter();
 };
 
 void HourlyEmployee::enterData()
@@ -165,25 +157,15 @@ void HourlyEmployee::enterData()
     cin >> hourlyWage;
     cout << "Hours worked: ";
     cin >> hoursWorked;
-
-    setType(HE);
-    heCounter++;
 }
 
 void HourlyEmployee::showData()
 {
     showCommon();
 
-    cout << "Type: hourly employee"<<"\t\t";
-    cout << "Hourly wage: " << hourlyWage<<"\t\t";
-    cout << "Hours worked: " << hoursWorked<<"\t\t";
-}
-
-int HourlyEmployee::heCounter = 0;
-
-int HourlyEmployee::getHeCounter()
-{
-    return heCounter;
+    cout << "Employee: hourly"<<"\t";
+    cout << "Hourly wage: " << hourlyWage<<"\t";
+    cout << "Hours worked: " << hoursWorked<<"\t";
 }
 
 //---SALARIED-EMPLOYEE---
@@ -192,12 +174,10 @@ class SalariedEmployee : public Employee
 {
 private:
     double annualSalary;
-    static int seCounter;
 public:
     SalariedEmployee():Employee(){};
     void enterData();
     void showData();
-    static int getSeCounter();
 };
 
 void SalariedEmployee::enterData()
@@ -207,24 +187,14 @@ void SalariedEmployee::enterData()
     cout << "---DETAILS---"<<endl;
     cout << "Annual salary: ";
     cin >> annualSalary;
-
-    setType(SE);
-    seCounter++;
 }
 
 void SalariedEmployee::showData()
 {
     showCommon();
 
-    cout << "Type: salaried employee" << "\t\t";
-    cout << "Annual salary: " << annualSalary<<"\t\t";
-}
-
-int SalariedEmployee::seCounter = 0;
-
-int SalariedEmployee::getSeCounter()
-{
-    return seCounter;
+    cout << "Employee: salaried" << "\t";
+    cout << "Annual salary: " << annualSalary<<"\t";
 }
 
 //---MANAGER---
@@ -233,12 +203,10 @@ class Manager : public Employee
 {
 private:
     double profitSharing;
-    static int mCounter;
 public:
     Manager():Employee(){};
     void showData();
-    void enterData();
-    static int getMCounter();
+    void enterData();;
 };
 
 void Manager::enterData()
@@ -248,24 +216,14 @@ void Manager::enterData()
     cout << "---DETAILS---"<<endl;
     cout << "Profit sharing: ";
     cin >> profitSharing;
-
-    setType(M);
-    mCounter++;
 }
 
 void Manager::showData()
 {
     showCommon();
 
-    cout << "Type: manager"<<"\t\t";
-    cout << "Profit sharing " << profitSharing<<"\t\t";
-}
-
-int Manager::mCounter = 0;
-
-int Manager::getMCounter()
-{
-    return mCounter;
+    cout << "Employee: manager"<<"\t";
+    cout << "Profit sharing " << profitSharing<<"\t";
 }
 
 //---MAIN-FUNCTION---
@@ -283,13 +241,11 @@ int main()
     SalariedEmployee dbSE[DB_SIZE] = SalariedEmployee();
     Manager dbM[DB_SIZE] = Manager();
 
+    HourlyEmployee he = HourlyEmployee();
+    SalariedEmployee se = SalariedEmployee();
+    Manager m = Manager();
+
     int i = Employee::getCounter();
-
-    int iHE = HourlyEmployee::getHeCounter();
-
-    int iSE = SalariedEmployee::getSeCounter();
-
-    int iM = Manager::getMCounter();
 
     int input = -1;
     do
@@ -311,7 +267,7 @@ int main()
             {
                 int type = -1;
                 system("cls");
-                cout << "Select type of the employee"<<endl;
+                cout << "---TYPE-OF-EMPLOYEE---"<<endl;
                 cout << "[1] Hourly employee" << endl;
                 cout << "[2] Salaried employee" << endl;
                 cout << "[3] Manager" << endl;
@@ -325,36 +281,30 @@ int main()
                 {
                 case 1: //[1] Hourly employee
                     {
-                        HourlyEmployee he = HourlyEmployee();
                         he.enterData();
                         db[i] = he;
-                        dbHE[iHE] = he;
+                        dbHE[i] = he;
 
                         i++;
-                        iHE++;
                         break;
                     }
                 case 2: //[2] Salaried employee
                     {
-                        SalariedEmployee se = SalariedEmployee();
                         se.enterData();
                         db[i] = se;
-                        dbSE[iSE] = se;
+                        dbSE[i] = se;
 
                         i++;
-                        iSE++;
                         break;
                     }
 
                 case 3: //[3] Manager
                     {
-                        Manager m = Manager();
                         m.enterData();
                         db[i] = m;
-                        dbM[iM] = m;
+                        dbM[i] = m;
 
                         i++;
-                        iM++;
                         break;
                     }
                 default:
@@ -375,7 +325,43 @@ int main()
             }
         case 2: //[2] Delete the employee
             {
+                int num = -1;
                 system("cls");
+                cout << "---DELETE-AT-POSITION---"<<endl;
+
+                //show employee to delete
+                for(int j = 0; j < i; j++)
+                {
+                    if(db[j].getIsCreated())
+                    {
+                        cout << "["<<j<<"] ";
+                        db[j].showCommon();
+                        cout << endl;
+                    }
+                }
+                cout << endl << "Enter: ";
+                cin >> num;
+
+                system("cls");
+                if(num<0 || num>=i)
+                {
+                    cout << "Non-existend index was entered!"<<endl;
+                }
+                else if(db[num].getIsCreated())
+                {
+                    db[num].deleteEmployee();
+                    dbHE[num].deleteEmployee();
+                    dbSE[num].deleteEmployee();
+                    dbM[num].deleteEmployee();
+
+                    cout <<"Following user was deleted!"<<endl;
+                    db[num].showCommon();
+                    cout<<endl;
+                }
+                else
+                {
+                    cout << "No employee is assigned to this index!"<<endl;
+                }
 
                 system("pause");
                 system("cls");
@@ -402,7 +388,7 @@ int main()
                 system("cls");
 
                 //HE
-                for(int j = 0; j <= iHE; j++)
+                for(int j = 0; j < i; j++)
                 {
                     if(dbHE[j].getIsCreated())
                     {
@@ -412,7 +398,7 @@ int main()
                 }
 
                 //SE
-                for(int j = 0; j <= iSE; j++)
+                for(int j = 0; j < i; j++)
                 {
                     if(dbSE[j].getIsCreated())
                     {
@@ -422,7 +408,7 @@ int main()
                 }
 
                 //M
-                for(int j = 0; j <= iM; j++)
+                for(int j = 0; j < i; j++)
                 {
                     if(dbM[j].getIsCreated())
                     {
