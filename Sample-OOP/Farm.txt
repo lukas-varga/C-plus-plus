@@ -1,0 +1,32 @@
+Create an array with 100 objects of the type animal in the main program. 
+Use a switch-case to create a user menu with the following four options:
+
+-	1: Enter animal ()
+-	3: Show animal ()
+-	2: Sell animal ()
+-	0: Exit program
+
+The menu should reappear until the user enters the number to "Exit program" (while-loop).
+
+
+The animal number is a consecutive number, which increases if the user has entered an animal.
+
+When entering an animal, the following data should be saved:
+-	AnimalNumber
+-	Species
+-	Weight
+
+All the animals should be displayed with the following data:
+-	AnimalNumber
+-	Species
+-	Weight
+-	If the animal is still in stock.
+
+When selling an animal, it should be checked whether the animal is still in the stock and whether the animal number stored corresponds to the animal number entered.
+
+If not, a message should appear stating that the animal number is incorrect or that the animal is not in the stock. The following should be possible
+-	Entering the daily price
+-	Total revenues should be increased (Weight * DailyPrice)
+-	Output the total revenues (here the total revenue of all sold animals is displayed)
+-	A sold animal is no longer in stock. 
+ 

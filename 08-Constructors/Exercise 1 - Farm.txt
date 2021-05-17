@@ -1,0 +1,8 @@
+
+
+Use your program from Chapter 7 „Exercise 1 - Farm“ as template and modify it as follows:
+
+To initialize the instances, use a constructor with a member initialization list and a standard constructor that queries the data.
+
+
+Create two objects in the main program using the two constructors. Then call the function Calculate_revenue.

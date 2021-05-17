@@ -1,0 +1,41 @@
+Create a class Vehicle with the following data members
+
+
+-	brand
+
+
+Create the derived classes Car and Truck. Both of them inherit the data members of Vehicle.
+
+Class Car has the following properties:
+
+Data member:
+-	Number_Passengers
+
+Constructor:
+-	Default constructor -> Records the data of the base/derived class
+
+Member function:
+-	Display() -> Outputs all the data
+-	Boarding() -> Increases the number of passengers
+
+Class Truck has the following properties:
+
+Data member:
+-	Tonnes
+
+Constructor:
+-	Default constructor -> Records the data of the base/derived class
+
+Member function:
+-	Display() -> Outputs all the data
+-	Loading() -> Increases the weight
+
+
+Create two arrays in the main program.
+The first array can hold 3 cars, the second array can hold 2 trucks.
+Create 3 instances of each of the two arrays. 
+Then call the functions boarding and loading of all instances, whereby the input of the required data is queried in the main function.
+Finally, output all data again.
+
+
+

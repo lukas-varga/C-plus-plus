@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1621189350 source:c:\users\lukas\documents\c-plus-plus\sample-oop\ex2-farm\main.cpp
+	<iostream>
+	<cstdlib>
+

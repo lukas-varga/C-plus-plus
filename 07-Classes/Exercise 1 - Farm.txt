@@ -1,0 +1,37 @@
+Convert the following source code into an object-oriented program 
+Create an animal object in main program and call the member functions for this object.
+
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+float Revenue=0; // Declare and initialize 3 global variables
+float Weight=0;
+float DailyPrice=0;
+
+void Request_data() //Declaration and definition of the member function Request_data
+{
+	cout << ãHow is the daily price?Ò<< endl;
+	cin >> DailyPrice;
+	cout << ãWhat is the weight of the animal? " << endl;
+	cin >> Weight;
+}
+
+void Calculate_revenue() //Declaration and definition of the member function Calculate_revenue
+{ 
+	Revenue = Weight* DailyPrice;
+	cout << "Revenue: " << Einnahme <<endl;
+}
+
+int main()
+{
+	Request_data(); //Calling functions
+	Calculate_revenue();
+	
+	cout << endl << endl;
+	
+	system("PAUSE");
+	return 0;
+}

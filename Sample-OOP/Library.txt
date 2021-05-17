@@ -1,0 +1,7 @@
+
+You want to write a program for the library management, where the data of a user is queried at the beginning of the program start. A menu should then appear in which the user can navigate. Here's what can work:	¥ Enter personal data	¥ Borrow a book	¥ Extend loan	¥ Output all data	¥ Return book	¥ ExitThe personal data is entered into the system from scratch.The following functions can only be used if the borrower does not yet have a book, otherwise a message appears that the borrower already has a book.
+	- The person can borrow a maximum of out of 3 books. For books, only the titles and authors are stored in the system. When borrowing, a return date is specified by which
+	the borrower is supposed to return the book (incorrect date is not queried).	- The loan can be extended by 1 month. If the loan starts at the end of the month, the respective month is also set to the end of the month.	Example 1: Loan is from 31 Mar 2016 - Extension - New return date: 30 Apr 2016 
+	Example 2: Loan is from 30 Jan 2016 - Extension - New return date: 30 Feb 2016 
+	Example 3: Loan is from 20 Dec 2016 - Extension - New return date: 20 Jan 2017	-When data is output, all loan data (person, book, return date) is displayed.	- When the book is returned, the borrower has the possibility to borrow a new book again.
+When the user exits the program, a goodbye message should appear.

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1621073539 source:c:\users\lukas\documents\c-plus-plus\07-classes\ex2-animals\main.cpp
+	<iostream>
+	<cstdlib>
+

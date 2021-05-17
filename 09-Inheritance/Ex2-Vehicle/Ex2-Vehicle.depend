@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1621168969 source:c:\users\lukas\documents\c-plus-plus\09-inheritance\ex2-vehicle\main.cpp
+	<iostream>
+	<cstdlib>
+

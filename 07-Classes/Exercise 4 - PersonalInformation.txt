@@ -1,0 +1,4 @@
+Create a program with a class named Person that saves some data (last name, first name, age) of a person. A member function called „Insert“ adds data to the data members of the class.
+A member function called „Compare“ should also be created in the class.
+A person calls this member function and an additional person should exist as a transfer parameter.
+This member function is used to check and display which of the two persons is older.

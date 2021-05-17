@@ -1,0 +1,21 @@
+Create a class named Car that has the following properties and member functions:
+
+
+Properties:
+
+-	brand
+-	mileage
+
+Member function:
+
+-	drive() -> Has an integer as parameter, which increases the mileage.
+
+
+To initialize the instances, use a constructor with a member initialization list that takes the two data members.
+
+In addition, you want to declare a class variable that remembers how often you have been driving.
+
+There will be three car rides. The data should be output after each ride.
+
+Finally, a destructor is to be created, that is called at the end of the program and displays,
+that the object has been removed.

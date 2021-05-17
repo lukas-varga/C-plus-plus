@@ -1,0 +1,41 @@
+Given is the following program: 
+
+#include <iostream> 
+#include <cstdlib>
+
+using namespace std;
+
+class Animal 
+{
+public: 
+	float Number; 
+	float Weight;
+
+	void displaydata()
+	{ 
+		cout <<"There are "<<Number << " animals with " <<Weight <<" kg each availableÒ<<endl; 
+	} 
+}; 
+
+int main()
+{ 
+	Animal Pig; 
+	Pig.Number=50; 
+	Pig.Weight=20; 
+	Pig.displaydata(); 
+
+	system("PAUSE");
+	return 0; 
+}; 
+
+
+Modify the program as follows:
+
+There should be 3 classes in the program:
+
+- The base class Animals (here only the number of animals is to be administered) 
+- The subclass SlaughterCattle (with the data member weight)
+- The subclass DairyCattle (with the data member milkyield)
+
+Use a constructor with a member initialization list that attaches values to the data members.
+Create an instance of the class SlaughterCattle and DairyCattle and display the data on the screen. 

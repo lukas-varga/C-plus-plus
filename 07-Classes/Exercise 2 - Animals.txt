@@ -1,0 +1,2 @@
+Create two instances each of the class Animal (from "Exercise 1 - Farm") as an array.
+Assign data to each instance and then output the data of all instances on the screen.
