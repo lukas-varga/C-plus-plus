@@ -465,28 +465,40 @@ void Manager::showData()
     and array of object of type 'Employee' as second one. */
 void displayEmployees(int, Employee[]);
 
+// Main method where the program starts
 int main()
 {
-    //TODO COMMENTS !!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    cout << "Welcome in STAFF HOLIDAY MANAGEMENT SYSTEM!" << endl;
+    // Welcome screen
+    cout << "---STAFF-HOLIDAY-MANAGEMENT---" << endl;
+    cout << "by Lukas Varga"<<endl;
     system("pause");
 
+    /*  Creating array of size 500 for general employees.
+        First idea was create only one array of class 'Employee',
+        but I was not able to manage accessing methods of child classes.
+        Simple type conversion and casting like in Java was not possible.
+        Thats why I decided to created mirrored arrays for each sub-class. */
     const int DB_SIZE = 500;
     Employee db[DB_SIZE] = Employee();
+    // Creating mirror arrays of size 500 for all types of employees (sub-classes)
     HourlyEmployee dbHE[DB_SIZE] = HourlyEmployee();
     SalariedEmployee dbSE[DB_SIZE] = SalariedEmployee();
     Manager dbM[DB_SIZE] = Manager();
 
+    // Creating auxiliary instances
     HourlyEmployee he = HourlyEmployee();
     SalariedEmployee se = SalariedEmployee();
     Manager m = Manager();
 
+    // Initialization of main indexer used for all arrays (super and sub classes)
     int i = Employee::getCounter();
 
+    // User input variable for main screen
     int input = -1;
+    // Stay in loop till user enter value 0
     do
     {
+        // Printing main menu
         system("cls");
         cout << "---STAFF-HOLIDAY-MANAGEMENT---" << endl;
         cout << "[1] Create an employee" << endl;
@@ -499,13 +511,17 @@ int main()
         cout << endl << "Enter: ";
         cin >> input;
 
+        // Deciding which action from menu will be executed
         switch(input)
         {
-        case 1: //[1] Create an employee
+        //[1] Create an employee
+        case 1:
             {
+                // Using infinite loop with inner menu
                 bool correctInput=false;
                 do
                 {
+                    // Displaying menu for which type of employee will be entered and storing input in variable
                     int type = -1;
                     system("cls");
                     cout << "---TYPE-OF-EMPLOYEE---"<<endl;
@@ -516,78 +532,108 @@ int main()
                     cout << endl << "Enter: ";
                     cin >> type;
 
+                    /*  Deciding which employee type will be created.
+                        When the type is correctly chosen the value
+                        of temporary boolean variable is changed to true. */
                     switch(type)
                     {
-                    case 1: //[1] Hourly employee
+                    //[1] Hourly employee
+                    case 1:
                         {
+                            /*  Entering data by user and storing object to super-class array
+                                and also to according sub-class array of hourly employee. */
                             he.enterData();
                             db[i] = he;
                             dbHE[i] = he;
                             correctInput = true;
 
+                            // Incrementing array indexer (common for all arrays)
                             i++;
                             break;
                         }
-                    case 2: //[2] Salaried employee
+                    //[2] Salaried employee
+                    case 2:
                         {
+                            /*  Entering data by user and storing object to super-class array
+                                and also to according sub-class array of salaried employee. */
                             se.enterData();
                             db[i] = se;
                             dbSE[i] = se;
                             correctInput = true;
 
+                            // Incrementing array indexer (common for all arrays)
                             i++;
                             break;
                         }
-
-                    case 3: //[3] Manager
+                    //[3] Manager
+                    case 3:
                         {
+                            /*  Entering data by user and storing object to super-class array
+                                and also to according sub-class array of manager. */
                             m.enterData();
                             db[i] = m;
                             dbM[i] = m;
                             correctInput = true;
 
+                            // Incrementing array indexer (common for all arrays)
                             i++;
                             break;
                         }
+                    // [0] Exit
                     case 0:
+                        // Typing 0 will terminated infinite loop without adding new employee
                         correctInput=true;
                         break;
+                    // Notifying user about wrong input, loop starts again after pressing button
                     default:
                         cout << endl<<"Wrong input!"<<endl;
                         system("pause");
                     }
+                // Terminating of loop when a new employee was entered or user cancel the transaction
                 }while(!correctInput);
                 break;
             }
-        case 2: //[2] Delete the employee
+        //[2] Delete the employee
+        case 2:
             {
+                // Using infinite loop with inner menu
                 bool correctInput=false;
                 do
                 {
+                    // Initializing input variable
                     int num = -1;
                     system("cls");
                     cout << "---DELETE-AT-POSITION---"<<endl;
 
+                    /*  Displaying of rough information (without details) about users
+                        Records are counted with according indexes user can choose from. */
                     displayEmployees(i,db);
                     cout << endl << "Enter: ";
                     cin >> num;
 
+                    // Terminating if user input is 0
                     if(num==0)
                         correctInput=true;
+                    // Notifying user about wrong input when index is out of possible range of existing employees in array
                     else if(num<0 || num>i)
                     {
                         correctInput = false;
                         cout << endl<<"Non-nonexistent index was entered!"<<endl;
                         system("pause");
                     }
+                    // Correct input (employee is created and thus can be deleted)
                     else if(db[num].getIsCreated())
                     {
                         correctInput = true;
 
+                        // Informing user about details of deleted employee
                         cout<<endl <<"Following user was deleted!"<<endl;
                         db[num].showCommon();
                         cout<<endl;
 
+                        /*  Deleting employee in main and mirrored arrays
+                            Assigning new empty instance will automatically remove all previously entered data
+                            and also set 'isCreated' instance attribute to false (default). */
                         db[num] = Employee();
                         dbHE[num] = HourlyEmployee();
                         dbSE[num] = SalariedEmployee();
@@ -595,168 +641,222 @@ int main()
 
                         system("pause");
                     }
+                    // If user enter something else what is not correct
                     else
                     {
+                        // Loop continue and user needs to enter new input
                         correctInput=false;
                         cout << endl<<"Wrong input!"<<endl;
                         system("pause");
                     }
+                // Terminating of infinite loop
                 }while(!correctInput);
                 break;
             }
-        case 3: //[3] Enter the days of a holiday
+        //[3] Enter the days of a holiday
+        case 3:
             {
+                // Using infinite loop with inner menu
                 bool correctInput=false;
                 do
                 {
+                    // Printing title and initializing input variable
                     int num = -1;
                     system("cls");
                     cout << "---ENTER-HOLIDAYS-AT-POSITION---"<<endl;
 
+                    // Displaying the employee we can choose from for entering holidays
                     displayEmployees(i,db);
                     cout << endl << "Enter: ";
                     cin >> num;
 
-
+                    // Terminating condition without entering value
                     if(num==0)
                         correctInput=true;
+                    // Index is out of valid boundaries
                     else if(num<0 || num>i)
                     {
                         correctInput = false;
                         cout << endl<<"Non-nonexistent index was entered!"<<endl;
                         system("pause");
                     }
+                    // Correct index entered
                     else if(db[num].getIsCreated())
                     {
                         correctInput = true;
 
+                        /*  Calling method of entering holidays.
+                            It can either return true which indicates that object in main array
+                            has new valid value for attribute 'takenHolidays and thus
+                            we will distribute this new value to mirror arrays.
+                            Otherwise when there is returned false, no change with given attribute was made. */
                         bool success = db[num].enterHolidays();
                         if (success)
                         {
+                            // Setting new values in case of success
                             int newHolidays = db[num].getTakenHolidays();
                             dbHE[num].setTakenHolidays(newHolidays);
                             dbSE[num].setTakenHolidays(newHolidays);
                             dbM[num].setTakenHolidays(newHolidays);
                         }
                     }
+                    // Index is not valid
                     else
                     {
                         correctInput=false;
                         cout << endl<<"Wrong input!"<<endl;
                         system("pause");
                     }
+                // Terminating of the loop
                 }while(!correctInput);
                 break;
             }
-        case 4: //[4] Data of the specific employee
+        //[4] Data of the specific employee
+        case 4:
             {
+                // Using infinite loop with inner menu
                 bool correctInput=false;
                 do
                 {
+                    // Printing title and initializing input variable
                     int num = -1;
                     system("cls");
                     cout << "---EMPLOYEE-DETAILS-AT-POSITION---"<<endl;
 
+                    // Displaying the employee we can choose from
                     displayEmployees(i,db);
                     cout << endl << "Enter: ";
                     cin >> num;
 
+                    // Terminating condition without entering value
                     if(num==0)
                         correctInput=true;
+                    // Index is out of valid boundaries
                     else if(num<0 || num>i)
                     {
                         correctInput = false;
                         cout << endl<<"Non-nonexistent index was entered!"<<endl;
                         system("pause");
                     }
+                    // Correct input
                     else if(db[num].getIsCreated())
                     {
                         correctInput = true;
 
+                        /*  Displaying user details depending on the sub-class he is part of
+                            Employee is only allowed to be just one type and that's why
+                            only one records will be display at any circumstances. */
                         cout<<endl;
                         if(dbHE[num].getIsCreated())
                         {
+                            // Details data about hourly employee
                             dbHE[num].showData();
                         }
                         else if(dbSE[num].getIsCreated())
                         {
+                            // Details data about salaried employee
                             dbSE[num].showData();
                         }
                         else if(dbM[num].getIsCreated())
                         {
+                            // Details data about manager
                             dbM[num].showData();
                         }
 
+                        // Printing additional info about taken holidays
                         int taken = db[num].getTakenHolidays();
-                        cout<<endl<<"Taken days of holidays:\t";
+                        cout<<endl<<"Taken days of holidays:\t\t";
                         cout<<taken<<endl;
 
+                        // Printing additional info about remaining holidays
                         int remaining = db[num].getRemainingHolidays();
                         cout<<"Remaining days of holidays:\t";
                         cout<<remaining<<endl;
                         system("pause");
                     }
+                    // Any other input which was not catch earlier
                     else
                     {
+                        // Telling user that input was incorrect and loop will start over
                         correctInput=false;
                         cout << endl<<"Wrong input!"<<endl;
                         system("pause");
                     }
+                // Terminating of the loop
                 }while(!correctInput);
                 break;
             }
-        case 5: //[5] Data of all employees
+        //[5] Data of all employees
+        case 5:
             {
+                // Printing title
                 system("cls");
                 cout << "---DATA-OF-ALL-EMPLOYEES---"<<endl;
                 cout << "---GROUP-BY-EMPLOYEE-TYPE---"<<endl;
+                /*  Incrementing variable for making easy to read records
+                    by putting number in front of every row */
                 int indexer = 1;
 
-                //HE
+                // Displaying all stored info about hourly employees
                 for(int j=1; j <= i; j++)
                 {
+                    // Displaying only existing employees
                     if(dbHE[j].getIsCreated())
                     {
+                        // Printing number of row
                         cout << "("<< indexer++ <<") ";
+                        // Printing detailed data
                         dbHE[j].showData();
+                        //Adding info about taken/remaining holidays
                         cout<<"Taken/remaining holidays:\t";
                         cout<<dbHE[j].getTakenHolidays()<<"/"<<dbHE[j].getRemainingHolidays();
                         cout << endl;
                     }
                 }
 
-                //SE
+                // Displaying all stored info about salaried employees
                 for(int j=1; j <= i; j++)
                 {
+                    // Displaying only existing employees
                     if(dbSE[j].getIsCreated())
                     {
+                        // Printing number of row
                         cout << "("<< indexer++ <<") ";
+                        // Printing detailed data
                         dbSE[j].showData();
+                        //Adding info about taken/remaining holidays
                         cout<<"Taken/remaining holidays:\t";
                         cout<<dbSE[j].getTakenHolidays()<<"/"<<dbSE[j].getRemainingHolidays();
                         cout << endl;
                     }
                 }
 
-                //M
+                // Displaying all stored info about managers
                 for(int j=1; j <= i; j++)
                 {
+                    // Displaying only existing employees
                     if(dbM[j].getIsCreated())
                     {
+                        // Printing number of row
                         cout << "("<< indexer++ <<") ";
+                        // Printing detailed data
                         dbM[j].showData();
+                        //Adding info about taken/remaining holidays
                         cout<<"Taken/remaining holidays:\t";
                         cout<<dbM[j].getTakenHolidays()<<"/"<<dbM[j].getRemainingHolidays();
                         cout << endl;
                     }
                 }
 
+                // Stopping program so user can read output
                 system("pause");
                 system("cls");
                 break;
             }
-        case 6: //[6] Reset holidays (a new calendar year)
+        //[6] Reset holidays (a new calendar year)
+        case 6:
             {
+                // Input variable and printing menu
                 int answer = -1;
                 system("cls");
                 cout << "---DO-YOU-WANT-TO-RESET-HOLIDAYS?---"<<endl;
@@ -766,29 +866,32 @@ int main()
                 cout << endl << "Enter: ";
                 cin >> answer;
 
+                /*  If answer is YES, holidays are reseted to 0 for all employees (for example when a new calendar year comes).
+                    For all other responses the task terminates and no changes are made .*/
                 switch(answer)
                 {
-                case 1: //[1] YES
+                //[1] YES
+                case 1:
                     {
-                        //EMPLOYEE
+                        // Reseting holidays in employee array
                         for(int j=1; j <= i; j++)
                         {
                             db[j].setTakenHolidays(0);
                         }
 
-                        //HE
+                        // Reseting holidays in hourly employee array
                         for(int j=1; j <= i; j++)
                         {
                             dbHE[j].setTakenHolidays(0);
                         }
 
-                        //SE
+                        // Reseting holidays in salaried employee array
                         for(int j=1; j <= i; j++)
                         {
                             dbSE[j].setTakenHolidays(0);
                         }
 
-                        //M
+                        // Reseting holidays in manager array
                         for(int j=1; j <= i; j++)
                         {
                             dbM[j].setTakenHolidays(0);
@@ -798,10 +901,14 @@ int main()
                         system("pause");
                         break;
                     }
-                case 2: //[2] NO
-                case 0: //[0] Exit
+                //[2] NO
+                case 2:
+                //[0] Exit
+                case 0:
+                // Any other input
                 default:
                     {
+                        // For all of those values, which are different from YES, the task terminates
                         cout<<endl<<"Holidays were NOT reset!"<<endl;
                         system("pause");
                         break;
@@ -809,22 +916,28 @@ int main()
                 }
                 break;
             }
-        case 0: //[0] Exit
+        //[0] Exit
+        case 0:
             {
+                // Goodbye message while closing the whole program is displayed
                 system("cls");
-                cout << "STAFF HOLIDAY MANAGEMENT SYSTEM says farewell!" << endl;
+                cout << "---STAFF-HOLIDAY-MANAGEMENT---" << endl;
+                cout << "Farewell!"<<endl;
                 system("pause");
                 break;
             }
-        default: //Wrong input
+        // For any other input different from defined the notification about wrong input is displayed to user
+        default:
             {
                 input = -1;
                 cout << endl << "Wrong input!" << endl;
                 system("pause");
             }
         }
+    // Terminating of the main menu loop
     }while(input!=0);
 
+    // Returning from main method means that the whole program is terminated
     return 0;
 }
 
