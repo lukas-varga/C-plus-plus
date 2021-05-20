@@ -1,0 +1,6 @@
+int x;
+cin >> x;
+
+if (cin.fail()) {
+    //Not an int.
+}
