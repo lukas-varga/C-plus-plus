@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1621955164 source:c:\users\lukas\documents\c-plus-plus\part ii\00-inheritance\ex1-vehicle\main.cpp
+	"cstdlib"
+	"iostream"
+

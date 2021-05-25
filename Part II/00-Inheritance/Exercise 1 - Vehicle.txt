@@ -1,0 +1,47 @@
+Dear course participants, 
+ 
+Along with the course, I would like to work with you on a small program every week. In this way, you can practice the content you have learned right away. At the end of the week I will submit my solution to the exercise online. You can also comment on my solution or post your solution in the forum.
+
+Here is the first task to repeat the content of the first part of the course:
+
+Given is the following program:
+
+#include "cstdlib"
+#include "iostream" 
+using namespace std; 
+
+class Vehicle 
+{ 
+private:
+string brand;
+string licencePlate;
+int ps;
+int constructionYear;
+
+public: 
+void displayData(){ 
+cout << "Brand: " << brand << endl;
+cout << ãLicence Plate: " << licencePlate << endl;
+cout << "PS: " << ps << endl;
+cout << ãConstruction Year: " << constructionYear << endl; 
+} 
+}; 
+
+int main(){ 
+
+system("pause");
+return 0; 
+}; 
+
+
+Modify and extend the program as follows: 
+
+- Add a default constructor and constructor with a member initialization list to the class Vehicle.
+- Create 2 instances of the class Vehicle (using the constructor with the member initialization list) and display the data on the screen.
+- The program should have 3 classes: The program should have 3 classes: The base class Vehicle with already existing attributes, and 2 derived classes from the base class Vehicle: the class Car with an attribute maxSpeed of the data type float, and the class Truck with 2 attributes: maxLoad (float) and numberWheels (int). 
+- For each new created class, define both the default constructor and the constructor with a member initialization list, as well as a member function to output the data displaydata().
+- Create an instance of class Car and Truck and display the data on the screen.
+Hint: Develop the program step by step. Compile the program after each intermediate step and check the desired result. 
+
+Regards, 
+Barbara Handy
