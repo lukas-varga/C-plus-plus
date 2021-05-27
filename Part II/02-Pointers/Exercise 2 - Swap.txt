@@ -1,0 +1,5 @@
+Write a function "swap" that swaps the values of two entered integer numbers.
+
+The numbers are to be passed as a reference (the changed values in the function are therefore also changed to main).
+
+Add a simple main function that tests swap.

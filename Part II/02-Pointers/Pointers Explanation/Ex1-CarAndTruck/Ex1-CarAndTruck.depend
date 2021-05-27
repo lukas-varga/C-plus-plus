@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1622130238 source:c:\users\lukas\documents\c-plus-plus\part ii\02-pointers\pointers explanation\ex1-carandtruck\main.cpp
+	"cstdlib"
+	"iostream"
+

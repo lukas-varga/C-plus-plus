@@ -1,0 +1,8 @@
+Get acquainted with references and pointers. Have a look at the sample programs in the script. Test them. 
+
+Create one instance each of the car class and the truck class as pointers (use exercise 1).
+Use
+a) Pointers
+b) References
+
+Then display the data on the screen.

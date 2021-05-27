@@ -1,0 +1,40 @@
+Given is the following program:
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std ;
+
+void sort (int);
+
+int main ( void )
+{
+int a [10], i;
+
+cout << "Unsorted Array : " << endl;
+for ( i =0; i <10; i ++)
+{
+	a [i]= rand()%100;
+	cout << a [i] << " ";
+}
+
+cout << endl;
+
+cout << "Sorted Array : " << endl;
+for ( i =0; i <10; i ++)
+	cout << a [i] << " ";
+	
+cout << endl;
+
+system("pause");
+return 0;
+}
+
+void sort(int x)
+{
+	
+}
+
+
+Modify and extend the program so that the function "sort" sorts the passed array.
+Output the sorted results in the main function.

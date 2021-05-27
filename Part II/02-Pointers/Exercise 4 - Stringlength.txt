@@ -1,0 +1,4 @@
+Write a function "stringlength". A char array, which can contain 50 characters and returns the length of this character string, is passed to this function. 
+After entering the character string, the number of characters is to be output.
+
+Tip: The end of a string is marked with \0.

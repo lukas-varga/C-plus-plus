@@ -1,0 +1,2 @@
+Write a progra m that replaces all multiple blanks by a single blank from a t ext in a file and displays the text on the screen. 
+The new output shoul d then be saved in an separate file.

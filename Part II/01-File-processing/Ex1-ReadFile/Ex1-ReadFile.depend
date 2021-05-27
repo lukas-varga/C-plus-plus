@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1622047811 source:c:\users\lukas\documents\c-plus-plus\part ii\01-file-processing\ex1-readfile\main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+

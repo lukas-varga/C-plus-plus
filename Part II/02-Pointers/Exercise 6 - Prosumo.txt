@@ -1,0 +1,6 @@
+Write a program that contains a function " prosumo ". An array is passed to this function. It returns the sum and the product of the array elements.
+
+Create the function based on pointers. The two results are determined using pointers.
+A value specifying the number of elements in the array may be passed to the function.
+
+

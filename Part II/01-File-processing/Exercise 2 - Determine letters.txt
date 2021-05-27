@@ -1,0 +1,4 @@
+
+Write a program that reads text from a file.
+The user should then be able to enter a letter. The program should determine how often the letter appears within the text.
+

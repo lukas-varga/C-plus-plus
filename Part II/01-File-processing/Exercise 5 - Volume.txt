@@ -1,0 +1,5 @@
+
+Calculate the volume of a cuboid within a function.
+If one of the values entered is negative or zero, 
+ an error message should be thrown.
+If the values are correct, the result is to be displayed on the screen.

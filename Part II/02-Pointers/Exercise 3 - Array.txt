@@ -1,0 +1,12 @@
+The following array is given:
+
+int numbers[] = {10,20,30};
+
+Pass the beginning and the end of the array as pointers to a function.
+Increase each value by 1 until the end is reached.
+Then output the new values (11,21,31) in a function. 
+The output is again based on the beginning and the end of the array.
+
+Tip: Arrays are passed as pointers as follows: 
+
+myFunction(numbers+2);

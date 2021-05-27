@@ -1,0 +1,13 @@
+A person file contains the four following datasets:
+
+
+Persno 	Name 	Hours	HourlyWage 
+100 	Meier 	152 	9.20 
+102 	Kunze 	165 	11.05 
+108 	Weber 	190 	15.50 
+111 	Berger 	80 	14.20 
+ 
+Define a appropriate class and save these four data sets in an array.
+
+The data records are then to be displayed formatted, whereby in the 5th column the 
+GrossWage (Hours * HourlyWage) is to be displayed.
