@@ -1,0 +1,4 @@
+Create an array with a user-specified memory area.
+The user should then be able to enter any numbers that are stored in the array.
+Output the stored numbers again.
+Finally, release the memory of the array.

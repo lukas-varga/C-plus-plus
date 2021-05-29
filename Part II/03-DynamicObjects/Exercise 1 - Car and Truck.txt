@@ -1,0 +1,8 @@
+
+Create 3 instances each of the Car class and the Truck class (from "exercise 1 - Vehicles", Chapter:  Repetition of course part 1: Inheritance).
+
+The instances are to be created dynamically (as pointers via new).
+The data are to be entered by the user via the console.
+
+Hint: Use a loop (for or while or do while).
+Then output the data from all instances on the screen (using a loop).

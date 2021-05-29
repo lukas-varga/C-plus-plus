@@ -1,0 +1,9 @@
+
+Create a class "Rectangle", which has a length and width as data members.
+Create a suitable constructor that fills the data members with data.
+
+A dynamic object is to be created in the main function.
+Create a new object until either the length or width is zero.
+For each newly created object, the constructor is to be called and the area calculated and displayed on the screen.
+
+Finally, release the memory of the object.
