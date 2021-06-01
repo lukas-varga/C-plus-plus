@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1622448509 source:c:\users\lukas\documents\c-plus-plus\part ii\shoppinglist\shoppinglist\main.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<strstream>
+

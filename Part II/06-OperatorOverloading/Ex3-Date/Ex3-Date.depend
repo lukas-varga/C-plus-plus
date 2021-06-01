@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1622480722 source:c:\users\lukas\documents\c-plus-plus\part ii\06-operatoroverloading\ex3-date\main.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+

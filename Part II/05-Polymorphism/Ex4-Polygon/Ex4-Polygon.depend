@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1622461702 source:c:\users\lukas\documents\c-plus-plus\part ii\05-polymorphism\ex4-polygon\main.cpp
+	<iostream>
+	<cstdlib>
+

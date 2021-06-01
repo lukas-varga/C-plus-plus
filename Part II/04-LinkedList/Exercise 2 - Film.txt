@@ -1,0 +1,19 @@
+
+Create a class "Film", which contains the data members Title, Year and Genre.
+In addition, the data member "Successor" is to exist, which points to the next film object in the list.
+Create a corresponding constructor that fills the three data members with values.
+
+Also create a class "FilmList", which contains the data members "Beginning" and "End". Both data members are of the type "Film".
+
+Create a concatenated list using the following methods in the class "Filmlist":
+
+-add
+	Adds a movie to the end of the list
+-clearList
+	Deletes the complete list (use delete to remove each item from the memory)
+-displayElements
+	Outputs the films in the list (title, year, genre)
+
+In the main program 3 film objects are to be added to the list. Then output the list and delete it.
+Finally, the FilmList is to be deleted by a destructor.
+

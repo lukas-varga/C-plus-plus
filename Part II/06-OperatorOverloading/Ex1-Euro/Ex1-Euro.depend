@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1622476891 source:c:\users\lukas\documents\c-plus-plus\part ii\06-operatoroverloading\ex1-euro\main.cpp
+	<iostream>
+	<cstdlib>
+	<cmath>
+

@@ -1,0 +1,16 @@
+
+
+Create a class "Element", which (as public) contains the following data members an integer variable called "Value" and a pointer called "Next", which is of the same data type as the class.
+
+Create an object in the main that has the value NULL at the beginning.
+Enter a value until 0 is entered. This is to indicate the end of the list.
+A new element is to be created for each entered value. The value entered is stored in the variable "value".
+Concatenate these elements by setting the "start" object and the "next" object correctly.
+
+
+Then output the list of values for the created objects.
+
+Hint:
+
+When a new element is inserted, its successor becomes the beginning of the list.
+The new element then marks the new beginning of the list.

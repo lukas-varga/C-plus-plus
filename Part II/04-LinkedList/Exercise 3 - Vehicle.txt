@@ -1,0 +1,87 @@
+Extend the following program as follows:
+
+Objects (instances) of the class "Vehicle" are to be managed in a linked list.
+It should be possible to delete the last element of the list and create new ones.
+
+
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+class Vehicle
+{
+protected:
+    int Number;
+public:
+    Vehicle(){};//Default constructor
+    Vehicle(int numb):Number(numb){}; // Constructor with member initializer list
+};
+
+class Car: public Vehicle
+{
+// Data members
+private:
+    int CarNo;
+    float Weight;
+    Auto  *Successor; // Concatenation pointer to the successor
+// Member functions
+public:
+// Constructor
+    Car (int no = 0, float wei = 0.0): CarNo(no), Weight(wei), Successor(0) {}
+    int getCarNo () const { return CarNo; }
+    float getWeight () const { return Weight; }
+    void print () const { cout << "Car number: " << CarNo << ", Weight: " << Weight << endl; }
+    Auto *next () { return Successor; }
+};
+
+class ListOfCars // List of cars
+{
+
+};
+
+int main ()
+
+{
+    int selection = 1;
+    ListOfCars list;
+    int cNo, CarNo;
+    float wei;
+    Car *kp;
+
+    do
+    {
+        system("cls");
+
+        cout << endl << "---- CAR MANAGEMENT ----" << endl;
+�	cout << "1. Create a new car" << endl;
+�	cout << "2. Delete last car" << endl;
+�	cout << "4. Show list" << endl;
+�	cout << "0. Exit program" << endl;
+�	cout << "> Make a selection [Return]: ";
+�	cin >> selection;
+�	cout << endl;
+
+        switch (selection)
+        {
+            case 0: // End
+                break;
+            case 1: // Create
+                break;
+            case 2: // Delete
+                break;
+            case 3: // List of all cars
+                break;
+	    case 4: // Search for car by CarNo. and if found, then output number of passengers/weight
+		break;
+            default: // Incorrect input
+                break;
+        }
+    } while (selection != 0);
+
+    //Delete all elements of the list
+
+    system("pause");
+    return 0;
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1622546756 source:c:\users\lukas\documents\c-plus-plus\part ii\07-templates\ex5-array\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+

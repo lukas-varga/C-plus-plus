@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1622541547 source:c:\users\lukas\documents\c-plus-plus\part ii\07-templates\ex1-additionandlinking\main.cpp
+	<iostream>
+	<cstdlib>
+

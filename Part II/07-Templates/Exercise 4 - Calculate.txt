@@ -1,0 +1,1 @@
+Create a template class “calc” which has two data members. Create a suitable constructor that fills the data members with values.An function "add" and "multiply" is to add or multiply the two data types and return the value.If a string is passed during the addition, the string is to be specialized.A space is to be inserted between the two character strings.

@@ -1,0 +1,28 @@
+Create a shopping list (linked list) where you can store items.
+An article is to have the following data members: Description, price, quantity.
+
+A menu with the following options is to be available:
+
+- Add item
+	Enter the name, price, quantity and then insert the item into the list.
+	If a name is entered which already appears in the list, the quantity of the respective item is increased by 1.
+- Modify item
+	The system displays the current list. The user can select an item.
+	He can then decide whether he wants to modify the name, price or quantity.
+- Delete item
+	The system displays the current list. The user can select an item
+	which is then deleted from the list.
+- Display shopping list
+	The entire list with the data members is displayed.
+	In addition, the total price (price*quantity) of the individual items is displayed.
+	If more than 2 items are available, the total price of all items will also be displayed.
+- Einkaufsliste leeren
+	Delete the entire shopping list.
+- Exit program
+	When you exit the program, the shopping list containing the individual items (data members) 
+	is saved in a file.
+
+At each program start, the list is filled with the items stored in the created file.
+
+Catch incorrect entries with Try-Catch (price and number must not be negative or null).
+If an incorrect entry is made, the transaction is cancelled and the menu appears again.

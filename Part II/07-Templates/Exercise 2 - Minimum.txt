@@ -1,0 +1,2 @@
+Create an inline template function that returns the minimum of two input parameters.
+Test the function with two integer variables and two char variables.

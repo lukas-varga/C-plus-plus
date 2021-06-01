@@ -1,0 +1,1 @@
+Create a template function. The first input parameter is an array (any data type) and the second holds the number of elements of the array.Calculate the average with this function, return it and then output it.The result is always to be a floating point number!Test the function with an Int-Array and a Float-Array.
