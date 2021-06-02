@@ -1,0 +1,8 @@
+int x;
+cin >> x;
+
+if (cin.fail()) {
+    //Not an int.
+}
+
+https://stackoverflow.com/questions/5655142/how-to-check-if-input-is-numeric-in-c
