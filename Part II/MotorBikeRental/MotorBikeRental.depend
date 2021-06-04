@@ -1,14 +1,10 @@
 # depslib dependency file v1.0
-1622652310 source:c:\users\lukas\documents\c-plus-plus\part ii\motorbikerental\main.cpp
+1622743710 source:c:\users\lukas\documents\c-plus-plus\part ii\motorbikerental\main.cpp
 	<iostream>
 	<cstdlib>
 	<fstream>
 	<time.h>
 	<limits>
-	<iostream>
-	<string>
-	<fstream>
 	<sstream>
 	<vector>
-	<fstream>
 
