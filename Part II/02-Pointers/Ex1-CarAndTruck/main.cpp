@@ -44,7 +44,7 @@ public:
        cout <<  "Type: Car"<<endl;
     }
 
-    displayData()
+    void displayData()
     {
         Vehicle::displayData();
         cout << "Maximum speed: " << maxSpeed << endl;
@@ -66,7 +66,7 @@ public:
        cout <<  "Type: Truck"<<endl;
     }
 
-    displayData()
+    void displayData()
     {
         Vehicle::displayData();
         cout << "Maximum Load: " << maxLoad << endl;

@@ -9,7 +9,7 @@ int main()
 {
     int fahr = -1;
     int const STEP = 10;
-    int const SIZE = 10;
+    
 
     do
 	{
@@ -17,13 +17,14 @@ int main()
         cin >> fahr;
 	}while(fahr<=0);
 
-    table(fahr, STEP, SIZE);
+    table(fahr, STEP);
 
     system("pause");
 }
 
-void table(float fahr, int STEP, int SIZE)
+void table(float fahr, int STEP)
 {
+    int const SIZE = 10;
     const int CONV_CONST = 32;
     double cels = -1;
     float x_fahr = -1;
