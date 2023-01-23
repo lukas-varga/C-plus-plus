@@ -1,0 +1,3 @@
+C:/Users/lukas/Documents/GitHub/C-plus-plus/kiv-cpp/cmake-build-debug/CMakeFiles/kiv_cpp.dir
+C:/Users/lukas/Documents/GitHub/C-plus-plus/kiv-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lukas/Documents/GitHub/C-plus-plus/kiv-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
